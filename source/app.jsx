@@ -4,6 +4,8 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './components/Home';
 import MyBookings from './components/MyBookings';
 import Footer from './components/Footer';
+import AllRooms from './components/AllRooms';
+import HotelDetails from './components/HotelDetails';
 
 const App = () => {
 
@@ -16,6 +18,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/my-bookings' element={<MyBookings/>} />
+          <Route path='/hotels' element={<AllRooms/>} />
+          <Route path='/hotels/:id' element={<HotelDetails/>} />
         </Routes>
       </div>
       {!isOwnerPath && <Footer />}

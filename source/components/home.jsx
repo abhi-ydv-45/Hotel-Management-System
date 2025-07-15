@@ -5,11 +5,28 @@ import Offers from './Offers';
 import Testimonials from './Testimonials';
 import Newsletter from './Newsletter';
 import SearchForm from './SearchForm';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  // Remove refs, use state for check-in and check-out
-  const [checkIn, setCheckIn] = React.useState('');
-  const [checkOut, setCheckOut] = React.useState('');
+  const [search, setSearch] = React.useState({
+    destination: '',
+    checkIn: '',
+    checkOut: '',
+    guests: 1,
+  });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSearch((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const params = new URLSearchParams(search).toString();
+    navigate(`/hotels?${params}`);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -17,7 +34,7 @@ const Home = () => {
         <p className='bg-[#49B9FF]/50 px-3.5 py-1 rounded-full mt-20'>The Ultimate Hotel Experience</p>
         <h1 className='font-playfair text-2xl md:text-5xl md:text-[56px] md:leading-[56px] font-bold md:font-extrabold max-w-xl mt-4'>Discover Your Perfect Getaway Destination</h1>
         <p className='max-w-130 mt-2 text-sm md:text-base mb-8'>Unparalleled luxury and comfort await at the world's most exclusive hotels and resorts. Start your journey today with EliteStay.</p>
-        <SearchForm />
+        <SearchForm values={search} onChange={handleChange} onSearch={handleSearch} />
       </div>
 
       {/* Featured Hotels Section */}

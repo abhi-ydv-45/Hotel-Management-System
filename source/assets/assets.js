@@ -71,4 +71,39 @@ export const roomsDummyData = [
     },
     pricePerNight: 110
   }
+];
+
+export const hotelsDummyData = [
+  {
+    id: 1,
+    name: 'EliteStay Grand Hotel',
+    location: 'New York, USA',
+    price: 180,
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+    description: 'A luxury hotel in the heart of New York City with world-class amenities.'
+  },
+  {
+    id: 2,
+    name: 'EliteStay Beach Resort',
+    location: 'Malibu, USA',
+    price: 250,
+    image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
+    description: 'Enjoy the sun and sand at this beautiful Malibu beach resort.'
+  },
+  {
+    id: 3,
+    name: 'EliteStay Mountain Inn',
+    location: 'Aspen, USA',
+    price: 150,
+    image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80',
+    description: 'A cozy inn nestled in the mountains of Aspen.'
+  },
+  {
+    id: 4,
+    name: 'EliteStay City Suites',
+    location: 'London, UK',
+    price: 200,
+    image: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80',
+    description: 'Modern suites in the heart of London.'
+  },
 ]; 
